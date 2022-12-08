@@ -1,1 +1,9 @@
 ##Project 2
+
+import sqlite3
+conn = sqlite3.connect('world.sqlite')
+cursor = conn.cursor()
+
+cursor.execute('SELECT GNP,LifeExpectancy FROM country WHERE LifeExpectancy IS NOT NULL AND GNP IS NOT NULL')
+
+values = cursor.fetchall()
