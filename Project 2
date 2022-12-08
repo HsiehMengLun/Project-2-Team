@@ -7,3 +7,11 @@ cursor = conn.cursor()
 cursor.execute('SELECT GNP,LifeExpectancy FROM country WHERE LifeExpectancy IS NOT NULL AND GNP IS NOT NULL')
 
 values = cursor.fetchall()
+
+import sqlite3
+conn = sqlite3.connect('world.sqlite')
+cursor = conn.cursor()
+
+cursor.execute('SELECT a.Name, a.LifeExpectancy, sum(b.Population) as CityPopulation, a.Population  FROM country a JOIN city b on a.Code==b.CountryCode GROUP BY a.Code')
+
+values = cursor.fetchall()
