@@ -1,5 +1,7 @@
 ##Project 2
-
+## We aimed to study the relationship between urbanization rate, per capita GNP, and average life expectancy. 
+##The conclusion is that many factors affect per capita life expectancy. The higher the GNP and urbanization rate, the more people have longer lifes, but the relationship could be more positive.
+##The urbanization rate can be calculated indirectly from the total population of all cities in the country and the total population.
 import sqlite3
 conn = sqlite3.connect('world.sqlite')
 cursor = conn.cursor()
